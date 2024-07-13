@@ -32,6 +32,7 @@ internal class JwtService(
 
     fun createJWTToken(loginRequest: LoginRequest): String? {
         val user: User = userService.findByUsername(username = loginRequest.username) ?: return null
+        if (user.password != loginRequest.password) return null
         return JWT.create()
             .withIssuer(issuer)
             .withAudience(audience)
