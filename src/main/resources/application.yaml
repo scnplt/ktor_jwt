@@ -1,0 +1,11 @@
+ktor:
+    application:
+        modules:
+            - ktor_jwt.sample.sertan.dev.ApplicationKt.module
+    deployment:
+        port: 8080
+jwt:
+  audience: "jwt-audience"
+  issuer: "http://localhost"
+  realm: "KTOR Sample | JWT"
+  secret: "sample secret | use secret env for real project"
