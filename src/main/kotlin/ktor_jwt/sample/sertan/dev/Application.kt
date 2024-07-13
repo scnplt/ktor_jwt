@@ -1,8 +1,10 @@
 package ktor_jwt.sample.sertan.dev
 
+import io.ktor.http.HttpHeaders
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
 import io.ktor.server.plugins.callloging.CallLogging
+import io.ktor.server.plugins.cors.routing.CORS
 import io.ktor.server.request.httpMethod
 import io.ktor.server.request.path
 import ktor_jwt.sample.sertan.dev.plugins.configureRouting
@@ -26,6 +28,11 @@ fun Application.module() {
             val statusCode = call.response.status()
             "$method, $path, $statusCode"
         }
+    }
+
+    install(CORS) {
+        anyHost()
+        allowHeader(HttpHeaders.ContentType)
     }
 
     configureSerialization()

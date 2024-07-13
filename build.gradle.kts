@@ -32,6 +32,7 @@ dependencies {
     implementation("io.ktor:ktor-server-config-yaml")
     implementation("io.ktor:ktor-server-call-logging:$kotlin_version")
     implementation("io.ktor:ktor-server-swagger:$kotlin_version")
+    implementation("io.ktor:ktor-server-cors:$kotlin_version")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }
